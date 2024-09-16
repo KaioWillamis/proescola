@@ -1,11 +1,5 @@
 <?php
-session_start();
-
-if (!isset($_SESSION["admi"])) {
-    // Se não existir uma sessão, redirecionar para a página de login
-    header("Location: login.php");
-    exit();
-}
+include "sessao.php";
 
 // Função para buscar matrículas
 function buscarMatriculas($termo = "") {

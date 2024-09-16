@@ -10,6 +10,7 @@ if(!isset($_SESSION["admi"])){
 else{
     $admi = $_SESSION["admi"];
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +20,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style/login.css">
+    <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
 </head>
 <body>
     <main>
@@ -32,8 +34,12 @@ else{
             </form>
         </div>
         
-        <div class="imagem">
-
+        <div class="carrossel">
+            <div class="carousel-images">
+                <div class="img"><img src="img/imagem1.jpg" alt="Imagem 1"></div>
+                <div class="img"><img src="img/imagem2.jpg" alt="Imagem 2"></div>
+                <div class="img"><img src="img/imagem3.jpg" alt="Imagem 3" width="870" height="620"></div>
+            </div>
         </div>
     </main>
 </body>

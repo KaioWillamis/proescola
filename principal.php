@@ -1,15 +1,5 @@
 <?php
-session_start();
-
-if(!isset($_SESSION["admi"])){
-    //Se não existir uma sessão é porque o usuario não informou os dados na pagina de login
-    header("Location: login.php");
-    exit();
-}
-else{
-    //Se existir os dados vai continuar com sessão
-    $admi = $_SESSION["admi"];
-}
+include "sessao.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,23 +8,29 @@ else{
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Principal</title>
+<link rel="stylesheet" href="style/principal.css">
+<link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
 </head>
 <body>
     <main>
-        <div onclick="window.location.href='curso.php'">
-            <p>cursos</p>
+        <div onclick="window.location.href='curso.php'" class="curso">
+            <p>Cursos</p>
+            <img src="" alt="">
         </div>
 
-        <div onclick="window.location.href='matricula.php'">
-            <p>Matricula</p>
-        </div>
+        <div onclick="window.location.href='matricula.php'" class="matricula">
+            <p>Matrícula</p>
+            <img src="" alt="">
+        </div> 
 
-        <div onclick="window.location.href='alunos.php'">
+        <div onclick="window.location.href='alunos.php'" class="alunos">
             <p>Alunos</p>
+            <img src="" alt="">
         </div>
     
-        <div onclick="window.location.href='login.php'">
+        <div onclick="window.location.href='login.php'" class="voltar">
             <p>Voltar</p>
+            <img src="" alt="">
         </div>
     </main>
 </body>

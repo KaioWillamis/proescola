@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    width: 60%;
+    height: 80%;
+    background-color: rgb(0, 191, 255);
+    border-radius: 20px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.443);
+    flex-wrap: wrap; /* Para permitir que os itens quebrem linha */
+    justify-content: space-around; /* Espaçamento entre os itens */
+}
+
+main div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%; /* Ajuste a largura para caber duas divs lado a lado */
+    height: 40%; /* Ajuste a altura conforme necessário */
+    background-color: white;
+    margin: 3%;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Transição suave ao redimensionar */
+}
+
+main div:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da div ao passar o mouse */
+}
+
+main div p {
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,10 +1,5 @@
 <?php
-session_start();
-
-if (!isset($_SESSION["admi"])) {
-    header("Location: login.php");
-    exit();
-}
+include "sessao.php";
 
 function buscarCursos() {
     if (file_exists('json/cursos.json')) {

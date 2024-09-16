@@ -1,14 +1,5 @@
 <?php
-include "class/classusuario.php";
-session_start();
-
-$admi= $_SESSION['admi'];
-
-if(isset($_POST['login']) && isset($_POST['senha'])){
-    $admi->setNome($_POST['login']);
-    $admi->setSenha($_POST['senha']);
-    $_SESSION['admi'] = $admi;
-}
+include "sessao.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['login'];

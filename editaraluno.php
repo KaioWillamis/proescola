@@ -1,10 +1,5 @@
 <?php
-session_start();
-
-if(!isset($_SESSION["admi"])){
-    header("Location: login.php");
-    exit();
-}
+include "sessao.php";
 
 // Função para buscar aluno pelo ID
 function buscarAlunoPorId($idAluno) {

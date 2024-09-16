@@ -1,17 +1,6 @@
 <?php
 include "class/classaluno.php";
-
-session_start();
-
-if(!isset($_SESSION["admi"])){
-    //Se não existir uma sessão é porque o usuario não informou os dados na pagina de login
-    header("Location: login.php");
-    exit();
-}
-else{
-    //Se existir os dados vai continuar com sessão
-    $admi = $_SESSION["admi"];
-}
+include "sessao.php";
 
 if(isset($_POST['nome']) && ($_POST['nome']) !="" && isset($_POST['telefone']) && ($_POST['telefone']) !="" && isset($_POST['cpf']) && ($_POST['cpf']) !=""){
     
