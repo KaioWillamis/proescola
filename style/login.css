@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+main{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    width: 100%;
+    height: 80%;
+}
+
+h1{
+    text-align: left;
+    color: rgb(69, 73, 74);
+}
+
+.informacao{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+
+}
+
+.informacao > form{
+    width: 65%;
+    height: 50%;
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.informacao > form > input{
+    width: 100%;
+    height: 18%;
+
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(83, 83, 83, 0.486);
+}
+
+.informacao > form > .inputprincipal{
+    height: 20%;
+    color: white;
+    background-color: rgb(35, 200, 255);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.informacao > form > .inputprincipal:hover{
+    background-color: rgb(0, 191, 255);
+}
+

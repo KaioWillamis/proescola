@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "KaioWilla",
+        "telefone": "1234",
+        "cpf": "123",
+        "id": "4222953386",
+        "curso": "conect",
+        "numeros_matriculas": [
+            "44757",
+            "91488"
+        ],
+        "numero_matriculas": 2
+    },
+    {
+        "nome": "jo\u00e3o",
+        "telefone": "123",
+        "cpf": "123",
+        "id": "9727227612"
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "idAluno": "4222953386",
+        "idCurso": "Poo",
+        "data": "2024-09-13",
+        "numeroMatricula": "44757",
+        "nome": "KaioWilla"
+    },
+    {
+        "idAluno": "4222953386",
+        "idCurso": "conect",
+        "data": "2024-09-14",
+        "numeroMatricula": "91488"
+    }
+]

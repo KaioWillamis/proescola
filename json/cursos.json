@@ -1,0 +1,21 @@
+[
+    {
+        "nome": "Poo",
+        "duracao": "9",
+        "alunos": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "nome": "conect",
+        "duracao": "5",
+        "alunos": [
+            1
+        ]
+    }
+]
