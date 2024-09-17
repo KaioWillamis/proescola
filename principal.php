@@ -29,7 +29,6 @@ include "sessao.php";
         </div>
     
         <div onclick="window.location.href='login.php'" class="voltar">
-            <p>Voltar</p>
             <img src="img/voltar.png" alt="vetor seta para voltar" width="130px" height="130px">
         </div>
     </main>

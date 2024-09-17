@@ -1,21 +1,9 @@
 [
     {
-        "nome": "Poo",
-        "duracao": "9",
+        "nome": "Poo2",
+        "duracao": "18",
         "alunos": [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-        ]
-    },
-    {
-        "nome": "conect",
-        "duracao": "5",
-        "alunos": [
-            1
+            "4222953386"
         ]
     }
 ]

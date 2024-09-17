@@ -25,12 +25,20 @@ function excluirCurso($nomeCurso) {
         return $curso['nome'] !== $nomeCurso;
     });
 
-    // Verificar se o curso a ser excluído tem alunos matriculados
+    // Carregar alunos para verificar se o curso tem alunos matriculados
     $alunos = buscarAlunos();
+    $cursoTemAlunos = false;
+
     foreach ($alunos as $aluno) {
-        if ($aluno['curso'] === $nomeCurso) {
-            return false; // Curso não pode ser excluído porque tem alunos matriculados
+        if (isset($aluno['curso']) && $aluno['curso'] === $nomeCurso) {
+            $cursoTemAlunos = true; // Curso tem alunos matriculados
+            break;
         }
+    }
+
+    // Se o curso tem alunos matriculados, não deve ser excluído
+    if ($cursoTemAlunos) {
+        return false;
     }
 
     // Atualizar o arquivo de cursos se o curso puder ser excluído
@@ -93,6 +101,7 @@ $cursos = buscarCursos();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos</title>
+    <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
     <style>
         .lista-cursos {
             max-height: 400px;

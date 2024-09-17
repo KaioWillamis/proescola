@@ -1,6 +1,4 @@
 <?php
-include "classmatricula";
-
 class Aluno{
     private $nome;
     private $telefone;

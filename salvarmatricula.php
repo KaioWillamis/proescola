@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if (!isset($curso['alunos'])) {
                     $curso['alunos'] = [];
                 }
-                $curso['alunos'][] = +1;
+                $curso['alunos'][] = $idAluno; // Adiciona o ID do aluno ao curso
                 break;
             }
         }

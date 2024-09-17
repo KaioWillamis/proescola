@@ -67,6 +67,7 @@ function atualizarCurso($nomeCursoAntigo, $novoNome, $novaDuracao) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Curso</title>
+    <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
 </head>
 <body>
     <main>

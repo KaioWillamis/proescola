@@ -61,13 +61,15 @@ h1{
 .informacao > form > .inputprincipal{
     height: 20%;
     color: rgb(255, 255, 255);
-    background-color:rgb(35, 200, 255);;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 1) 0%, rgba(0, 191, 255, 1) 50%, rgba(173, 216, 230, 1) 100%);
     font-weight: bold;
     font-size: 20px;
+    transition: transform 0.3s ease;
 }
 
 .informacao > form > .inputprincipal:hover{
-    background-color: rgb(0, 191, 255);
+    background: linear-gradient(135deg, rgb(0, 63, 125) 0%, rgb(1, 130, 173) 50%, rgb(139, 209, 233) 100%);
+    transform: scale(1.1);
 }
 
 .carrossel{

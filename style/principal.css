@@ -6,44 +6,82 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
     height: 100vh;
 }
 
-main{
+main {
     display: flex;
-    width: 60%;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    align-items: center; 
+    width: 45%;
     height: 80%;
-    background-color: rgb(0, 191, 255);
+    background: linear-gradient(135deg, rgba(0, 102, 204, 1) 0%, rgba(0, 191, 255, 1) 50%, rgba(173, 216, 230, 1) 100%);
     border-radius: 20px;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.443);
-    flex-wrap: wrap; /* Para permitir que os itens quebrem linha */
-    justify-content: space-around; /* Espaçamento entre os itens */
 }
 
 main div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 35%; /* Ajuste a largura para caber duas divs lado a lado */
-    height: 40%; /* Ajuste a altura conforme necessário */
-    background-color: white;
-    margin: 3%;
-    border-radius: 10px;
-    transition: transform 0.3s ease; /* Transição suave ao redimensionar */
+    width: 40%; 
+    height: 40%;
+    background-color: rgb(255, 255, 255);
+    margin: 1%;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-main div:hover {
-    transform: scale(1.1); /* Aumenta o tamanho da div ao passar o mouse */
+main div img {
+    margin-bottom: 13px; 
 }
 
 main div p {
     font-size: 18px;
     font-weight: bold;
+    text-align: center; 
+    color:#FFD700;
+}
+
+main div:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 5px rgba(0, 191, 255, 0.7); 
+    filter: brightness(1.1); 
+}
+
+.voltar {
+    width: 24%; 
+    height: 24%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(255, 255, 255); 
+    margin-left: 14%;
+    margin-top: 15%;
+}
+
+.voltar p {
+    font-size: 14px; 
+    text-align: center; 
+}
+
+.voltar:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 5px rgba(165, 232, 255, 0.7); 
+    filter: brightness(1.1);
+}
+
+.matricula img{
+    margin-top: 5%;
+    margin-bottom: 0px;
 }

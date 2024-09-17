@@ -71,6 +71,7 @@ $alunos = buscarAlunos($termoPesquisa);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alunos</title>
+    <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
 
     <style>
         .lista-alunos {
