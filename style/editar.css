@@ -78,21 +78,6 @@ main > div > form > input{
     transform: scale(1.1);
 }
 
-.inputapagar{
-    width: 44%;
-    height: 10%;
-    color: rgba(0, 102, 204, 1);
-    background-color: white;
-    font-weight: bold;
-    font-size: medium;
-    transition: transform 0.3s ease;
-
-}
-
-.inputapagar:hover{
-    transform: scale(1.1);
-}
-
 button{
     width: 43%;
     height: 10%;
@@ -104,7 +89,6 @@ button{
     font-size: medium;
     background-color: white;
     transition: transform 0.3s ease;
-    margin-left: 2%;
 }
 
 button:hover{

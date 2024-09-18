@@ -42,22 +42,19 @@ function verificarMatriculaAluno($idAluno) {
 function excluirAluno($idAluno) {
     if (verificarMatriculaAluno($idAluno)) {
         echo "Não é possível excluir o aluno, pois ele está matriculado em algum curso.";
-    } else {
-        // Código para excluir o aluno
+    } 
+    else {
+    // Código para excluir o aluno
         if (file_exists('json/alunos.json')) {
             $alunos = json_decode(file_get_contents('json/alunos.json'), true);
             $alunos = array_filter($alunos, function($aluno) use ($idAluno) {
-                return $aluno['id'] !== $idAluno;
-            });
-            file_put_contents('json/alunos.json', json_encode(array_values($alunos), JSON_PRETTY_PRINT));
-            echo "Aluno excluído com sucesso.";
+            return $aluno['id'] !== $idAluno;
+        });
+
+        file_put_contents('json/alunos.json', json_encode(array_values($alunos), JSON_PRETTY_PRINT));
+        echo "Aluno excluído com sucesso.";
         }
     }
-}
-
-// Verifica se a exclusão foi solicitada
-if (isset($_GET['excluir'])) {
-    excluirAluno($_GET['excluir']);
 }
 
 // Busca de alunos com base no termo de pesquisa
@@ -85,6 +82,7 @@ $alunos = buscarAlunos($termoPesquisa);
             padding: 10px;
             margin-bottom: 10px;
         }
+
     </style>
 </head>
 <body>
@@ -93,9 +91,10 @@ $alunos = buscarAlunos($termoPesquisa);
             <form method="POST">
                 Nome <input type="text" placeholder="Nome do aluno" name="nome">
                 <input type="submit" value="Pesquisar">
+
+                <button type="button" onclick="window.location.href='cadastroaluno.php'">Cadastrar</button>
+                <button type="button" onclick="window.location.href='principal.php'">Voltar</button>
             </form>
-            <button onclick="window.location.href='cadastroaluno.php'">Cadastrar</button>
-            <button onclick="window.location.href='principal.php'">Voltar</button>
         </div> 
 
         <div class="lista-alunos">
@@ -121,6 +120,18 @@ $alunos = buscarAlunos($termoPesquisa);
                 <!-- Exibe esta mensagem se não houver alunos na lista -->
             <?php endif; ?>
         </div>
+
+        <?php
+        // Verifica se a exclusão foi solicitada
+        if (isset($_GET['excluir'])) {
+        ?>
+        <div class="mensagem">
+            <p> <?php excluirAluno($_GET['excluir']); ?> </p>
+        </div>
+        <?php
+        }
+        ?>
+        
     </main>
 </body>
 </html>

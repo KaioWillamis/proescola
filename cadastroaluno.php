@@ -16,10 +16,11 @@ include "sessao.php";
         <div>
             <h1>Cadastro de Aluno</h1>
             <form method="POST" action="salvaraluno.php">
-            Nome <input type="text" placeholder="Nome Aluno" name="nome"> <br>
-            Telefone <input type="text" placeholder="(00) 00000-0000" name="telefone"> <br>
-            CPF <input type="text" placeholder="000.000.000-00" name="cpf"> <br>
-            <input type="submit" value="Salvar">
+            Nome <br> <input type="text" placeholder="Nome Aluno" name="nome"> <br>
+            Telefone <br> <input type="text" placeholder="(00) 00000-0000" name="telefone"> <br>
+            CPF <br> <input type="text" placeholder="000.000.000-00" name="cpf"> <br>
+            <input type="submit" value="Salvar" class="inputsalvar"> <br>
+            <input type="reset" value="Apagar informações" name="apagar" class="inputapagar">
             <button type="button" onclick="window.location.href='alunos.php'">Cancelar</button>
             </form>
         </div>

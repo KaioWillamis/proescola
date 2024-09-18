@@ -68,17 +68,21 @@ function atualizarCurso($nomeCursoAntigo, $novoNome, $novaDuracao) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Curso</title>
     <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/editar.css">
 </head>
 <body>
     <main>
-        <form method="POST" action="">
-            <input type="hidden" name="nomeAntigo" value="<?php echo htmlspecialchars($cursoAtual['nome']); ?>">
-            Nome Atual: <input type="text" value="<?php echo htmlspecialchars($cursoAtual['nome']); ?>" readonly>
-            Novo Nome: <input type="text" name="novoNome" value="<?php echo htmlspecialchars($cursoAtual['nome']); ?>" required>
-            Nova Duração: <input type="text" name="novaDuracao" value="<?php echo htmlspecialchars($cursoAtual['duracao']); ?>" required>
-            <input type="submit" name="atualizar" value="Atualizar Curso">
-        </form>
-        <button onclick="window.location.href='cursos.php'">Voltar</button>
+        <div>
+            <h1>Editar Curso</h1>
+            <form method="POST" action="">
+                <input type="hidden" name="nomeAntigo" value="<?php echo htmlspecialchars($cursoAtual['nome']); ?>">
+                Nome Atual: <br> <input type="text" value="<?php echo htmlspecialchars($cursoAtual['nome']); ?>" readonly> <br>
+                Novo Nome: <br> <input type="text" name="novoNome" value="<?php echo htmlspecialchars($cursoAtual['nome']); ?>" required> <br>
+                Nova Duração: <br> <input type="text" name="novaDuracao" value="<?php echo htmlspecialchars($cursoAtual['duracao']); ?>" required> <br>
+                <input type="submit" name="atualizar" value="Atualizar Curso" class="inputsalvar"> <br>
+                <button type="button" onclick="window.location.href='curso.php'">Voltar</button>
+            </form>
+        </div>
     </main>
 </body>
 </html>

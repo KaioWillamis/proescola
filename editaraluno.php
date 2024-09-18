@@ -72,15 +72,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Aluno</title>
     <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/editar.css">
 </head>
 <body>
-    <h1>Editar Aluno</h1>
-    <form method="POST">
-        Nome: <input type="text" name="nome" value="<?php echo htmlspecialchars($aluno['nome']); ?>" required><br>
-        Telefone: <input type="text" name="telefone" value="<?php echo htmlspecialchars($aluno['telefone']); ?>" required><br>
-        CPF: <input type="text" name="cpf" value="<?php echo htmlspecialchars($aluno['cpf']); ?>" required><br>
-        <input type="submit" value="Atualizar">
-    </form>
-    <button onclick="window.location.href='alunos.php'">Voltar</button>
+    <main>
+        <div>
+            <h1>Editar Aluno</h1>
+            <form method="POST">
+                Nome: <br> <input type="text" name="nome" value="<?php echo htmlspecialchars($aluno['nome']); ?>" required><br>
+                Telefone: <br> <input type="text" name="telefone" value="<?php echo htmlspecialchars($aluno['telefone']); ?>" required><br>
+                CPF: <br> <input type="text" name="cpf" value="<?php echo htmlspecialchars($aluno['cpf']); ?>" required><br>
+                <input type="submit" value="Atualizar" class="inputsalvar"> <br>
+                <button type="button" onclick="window.location.href='alunos.php'">Cancelar</button>
+            </form>
+        </div>
+    </main>
 </body>
 </html>

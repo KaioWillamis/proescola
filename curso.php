@@ -72,18 +72,6 @@ function atualizarCurso($nomeCursoAntigo, $novoNome, $novaDuracao) {
     file_put_contents('json/alunos.json', json_encode($alunos, JSON_PRETTY_PRINT));
 }
 
-// Verificar se há um curso para excluir
-if (isset($_GET['excluir'])) {
-    $cursoExcluido = excluirCurso($_GET['excluir']);
-    if ($cursoExcluido) {
-        header("Location: cursos.php");
-        exit();
-    } else {
-        echo "Não foi possível excluir o curso. Existem alunos matriculados.";
-    }
-    exit();
-}
-
 // Verificar se o curso deve ser atualizado
 if (isset($_POST['atualizar'])) {
     atualizarCurso($_POST['nomeAntigo'], $_POST['novoNome'], $_POST['novaDuracao']);
@@ -138,10 +126,11 @@ $cursos = buscarCursos();
             <form method="POST" action="">
                 Nome: <input type="text" name="nome">
                 <input type="submit" value="Pesquisar">
+                <button type="button" onclick="window.location.href='cadastrarcurso.php'">Cadastrar</button>
+                <button type="button" onclick="window.location.href='principal.php'">Voltar</button>
             </form>
-            <button onclick="window.location.href='cadastrarcurso.php'">Cadastrar</button>
-            <button onclick="window.location.href='principal.php'">Voltar</button>
         </div>
+
         <div class="lista-cursos">
             <!-- Div onde a lista de cursos será exibida -->
             <?php if (!empty($cursos)): ?>
@@ -157,6 +146,24 @@ $cursos = buscarCursos();
             <?php else: ?>
                 <p>Nenhum curso encontrado.</p>
             <?php endif; ?>
+        </div>
+
+        <?php
+        // Verificar se há um curso para excluir
+        if (isset($_GET['excluir'])) {
+        $cursoExcluido = excluirCurso($_GET['excluir']);
+        if ($cursoExcluido) {
+        header("Location: cursos.php");
+        exit();
+        } else {
+        ?>
+        <div class="mensagem">
+        <?php
+        echo "<p>Não foi possível excluir o curso. Existem alunos matriculados.</p>";
+        }
+        exit();
+        }
+        ?>
         </div>
     </main>
 </body>
