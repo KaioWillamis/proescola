@@ -32,6 +32,19 @@ else{
             <input type="text" placeholder="Senha" name="senha"> <br>
             <input type="submit" value="Entrar" class="inputprincipal">
             </form>
+
+             <?php 
+            // Verifica se há um erro na URL
+            if (isset($_GET['erro']) && $_GET['erro'] == "1") {
+                ?>
+                <div class="mensagem">
+                    <?php
+                    echo "Senha ou nome errado!";
+                    ?>
+                </div>
+                <?php
+            }
+            ?>
         </div>
         
         <div class="carrossel">

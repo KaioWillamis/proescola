@@ -97,31 +97,18 @@ $matriculas = buscarMatriculas($termoPesquisa);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrículas</title>
     <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
-
-    <style>
-        .matricula {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .lista-matriculas {
-            max-height: 400px; /* Defina a altura máxima conforme necessário */
-            overflow-y: auto; /* Adiciona a barra de rolagem vertical */
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style/matricula.css">
 </head>
 <body>
     <main>
-        <div>
+        <div class="pesquisa">
             <form method="POST">
-                Nome do aluno: <input type="text" name="nome" value="<?php echo htmlspecialchars($termoPesquisa); ?>">
-                <input type="submit" value="Pesquisar">
+                Nome do aluno: <input type="text" name="nome" value="<?php echo htmlspecialchars($termoPesquisa); ?>" class="inputnome">
+                <input type="submit" value="Pesquisar" class="inputpesquisar">
+
+                <button type="button" onclick="window.location.href='cadastrarmatricula.php'">Cadastrar</button>
+                <button type="button" onclick="window.location.href='principal.php'">Voltar</button>
             </form>
-            <button onclick="window.location.href='cadastrarmatricula.php'">Cadastrar</button>
-            <button onclick="window.location.href='principal.php'">Voltar</button>
         </div>
 
         <div class="lista-matriculas">
@@ -143,7 +130,7 @@ $matriculas = buscarMatriculas($termoPesquisa);
                         }
                         ?>
                         <p><strong>Nome do Aluno:</strong> <?php echo htmlspecialchars($nomeAluno); ?></p>
-                        <a href="?excluir=<?php echo htmlspecialchars($matricula['numeroMatricula']); ?>" onclick="return confirm('Tem certeza que deseja excluir esta matrícula?');">Excluir Matrícula</a>
+                        <a href="?excluir=<?php echo($matricula['numeroMatricula']); ?>">Excluir Matrícula</a>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

@@ -69,28 +69,14 @@ $alunos = buscarAlunos($termoPesquisa);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alunos</title>
     <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
-
-    <style>
-        .lista-alunos {
-            max-height: 200px;
-            overflow-y: scroll;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        .aluno {
-            border: 1px solid #000;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style/alunos.css">
 </head>
 <body>
     <main>
-        <div>
+        <div class="pesquisa">
             <form method="POST">
-                Nome <input type="text" placeholder="Nome do aluno" name="nome">
-                <input type="submit" value="Pesquisar">
+                Nome: <input type="text" placeholder="Nome do aluno" name="nome" class="inputnome">
+                <input type="submit" value="Pesquisar" class="inputpesquisar"> <br>
 
                 <button type="button" onclick="window.location.href='cadastroaluno.php'">Cadastrar</button>
                 <button type="button" onclick="window.location.href='principal.php'">Voltar</button>
@@ -131,7 +117,6 @@ $alunos = buscarAlunos($termoPesquisa);
         <?php
         }
         ?>
-        
     </main>
 </body>
 </html>

@@ -1,13 +1,14 @@
 [
     {
-        "nome": "KaioWilla",
-        "telefone": "1234",
-        "cpf": "123",
-        "id": "4222953386",
-        "curso": "Poo2",
-        "numeros_matriculas": [
-            "74926"
-        ],
-        "numero_matriculas": 1
+        "nome": "Kaio",
+        "telefone": "(99) 99999-9999",
+        "cpf": "123.123.123-12",
+        "id": "1113222642"
+    },
+    {
+        "nome": "jo\u00e3o",
+        "telefone": "(99) 99999-9999",
+        "cpf": "111.111.111.11",
+        "id": "7272493833"
     }
 ]

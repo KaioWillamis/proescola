@@ -12,7 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
         else{
-            echo "Nome ou Senha incorretos! Por favor tente novamente!";
+            // Redireciona para login.php com um parâmetro de erro
+            header("Location: login.php?erro=1");
+            exit();
         }
     }
 }

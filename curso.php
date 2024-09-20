@@ -90,42 +90,14 @@ $cursos = buscarCursos();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos</title>
     <link rel="shortcut icon" href="img/school.ico" type="image/x-icon">
-    <style>
-        .lista-cursos {
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            padding: 10px;
-            background-color: #f9f9f9;
-        }
-
-        .curso {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #fff;
-        }
-
-        .curso p {
-            margin: 0;
-        }
-
-        .curso a {
-            color: red;
-            text-decoration: none;
-        }
-
-        .curso a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style/curso.css">
 </head>
 <body>
     <main>
-        <div>
+        <div class="pesquisa">
             <form method="POST" action="">
-                Nome: <input type="text" name="nome">
-                <input type="submit" value="Pesquisar">
+                Nome: <input type="text" name="nome" class="inputnome" placeholder="Informe o nome do curso">
+                <input type="submit" value="Pesquisar" class="inputpesquisar">
                 <button type="button" onclick="window.location.href='cadastrarcurso.php'">Cadastrar</button>
                 <button type="button" onclick="window.location.href='principal.php'">Voltar</button>
             </form>

@@ -14,6 +14,19 @@ function buscarAlunoPorId($idAluno) {
     return null;
 }
 
+// Função para verificar se o CPF já está sendo usado por outro aluno
+function cpfJaExiste($cpf, $idAlunoAtual) {
+    if (file_exists('json/alunos.json')) {
+        $alunos = json_decode(file_get_contents('json/alunos.json'), true);
+        foreach ($alunos as $aluno) {
+            if ($aluno['cpf'] === $cpf && $aluno['id'] !== $idAlunoAtual) {
+                return true; // CPF já está sendo usado por outro aluno
+            }
+        }
+    }
+    return false;
+}
+
 // Função para atualizar os dados do aluno no arquivo alunos.json
 function atualizarAluno($idAluno, $novoNome, $novoTelefone, $novoCpf) {
     if (file_exists('json/alunos.json')) {
@@ -55,14 +68,6 @@ if (!$aluno) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Atualiza os dados do aluno
-    $novoNome = $_POST['nome'];
-    $novoTelefone = $_POST['telefone'];
-    $novoCpf = $_POST['cpf'];
-    atualizarAluno($idAluno, $novoNome, $novoTelefone, $novoCpf);
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -85,6 +90,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="submit" value="Atualizar" class="inputsalvar"> <br>
                 <button type="button" onclick="window.location.href='alunos.php'">Cancelar</button>
             </form>
+
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Atualiza os dados do aluno
+                $novoNome = $_POST['nome'];
+                $novoTelefone = $_POST['telefone'];
+                $novoCpf = $_POST['cpf'];
+            
+                // Verifica se o CPF já existe para outro aluno
+                if (cpfJaExiste($novoCpf, $idAluno)) {
+                    ?>
+                    <div class="mensagem">
+                    <?php
+                    echo "Este CPF já está sendo usado por outro aluno.";
+                    ?>
+                    </div>
+                <?php
+                } else {
+                    ?>
+                    <div class="mensagem">
+                    <?php
+                    atualizarAluno($idAluno, $novoNome, $novoTelefone, $novoCpf);
+                    ?>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
     </main>
 </body>
